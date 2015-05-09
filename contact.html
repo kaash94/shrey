@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Contact</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+
+        <link rel="stylesheet" href="css/main.css">
+        <script src="js/vendor/modernizr-2.6.1.min.js"></script>
+
+        <!-- Load maps -->
+        <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+    </head>
+    <body>
+
+        <!-- Header area ================== -->
+        <header id="header">
+            <div class="container">
+                    <a href="index-2.html"><img src="img/1.jpG" alt="Smashing!" /></a>
+
+                    <nav id="mainmenu" class="menu">
+                        <ul>
+                            <li><a href="index-2.html">Home</a></li>
+                            <li><a href="portfolio.html">Analysis</a></li>
+                            <li><a href="post.html">Alarming Situations</a></li>
+                           <li class="current-menu-item"><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </nav>
+
+            </div><!-- /container -->
+        </header><!-- /header -->
+
+        <!-- Content area ================= -->
+        <div id="main" role="main" class="page">
+
+            <!-- Map -->
+            <section class="map">
+                <div id="map_canvas" style="height: 400px;"></div>
+                <script>
+                function initialize() {
+
+                    /* ---> THIS IS THE LOCATION FOR THE PIN <--- */
+                    var pin = new google.maps.LatLng(59.3169582, 18.0717774);
+
+                    /* ---> THIS SETS THE CENTER OF THE MAP <---- */
+                    var center = new google.maps.LatLng(59.3169582, 18.0717774);
+
+
+                var styles = [
+                        {
+                          featureType: "road",
+                          elementType: "geometry.stroke",
+                          stylers: [
+                            { visibility: "off" }
+                          ]
+                        },{
+                          featureType: "water",
+                          elementType: "geometry.fill",
+                          stylers: [
+                            { color: "#828280" },
+                            { hue: "#00c3ff" },
+                            { saturation: 90 },
+                            { lightness: 90 }
+                          ]
+                        },{
+                          featureType: "road.arterial",
+                          elementType: "geometry.fill",
+                          stylers: [
+                            { visibility: "off" }
+                          ]
+                        },{
+                          featureType: "road.highway",
+                          stylers: [
+                            { lightness: 50 },
+                          ]
+                        },{
+                          featureType: "poi.park",
+                          stylers: [
+                            { color: "#d4ecdc" },
+                            { visibility: "off" }
+                          ]
+                        },{
+                          featureType: "landscape.man_made",
+                          stylers: [
+                            { color: "#828282" },
+                            { lightness: 100 }
+                          ]
+                        },{
+                          featureType: "road.local",
+                          elementType: "geometry.fill",
+                          stylers: [
+                            { color: "#998e80" },
+                            { lightness: 100 }
+                          ]
+                        },{
+                          featureType: "administrative",
+                          elementType: "geometry.stroke",
+                          stylers: [
+                            { visibility: "off" }
+                          ]
+                        },{
+                          featureType: "transit",
+                          stylers: [
+                            { visibility: "off" }
+                          ]
+                        },{
+                          featureType: "water",
+                          elementType: "labels.text.fill",
+                          stylers: [
+                            { visibility: "on" },
+                            { color: "#ad8080" }
+                          ]
+                        },{
+                          featureType: "road.local",
+                          elementType: "labels.text.stroke",
+                          stylers: [
+                            { visibility: "on" }
+                          ]
+                        },{
+                          featureType: "road.local",
+                          elementType: "labels.text.fill",
+                          stylers: [
+                          { visibility: "on" }]
+                        }, {
+                          featureType: "poi",
+                          stylers: [
+                            { lightness: -9 },
+                            { visibility: "off" }
+                          ]
+                        }
+                    ];
+
+                    var mapOptions = {
+                      zoom: 15,
+                      center: center,
+                      mapTypeId: google.maps.MapTypeId.ROADMAP,
+                      panControl: false,
+                      scrollwheel: false,
+                      draggable: false,
+                      zoomControlOptions: {
+                          style: google.maps.ZoomControlStyle.BIG,
+                          position: google.maps.ControlPosition.LEFT_TOP
+                      },
+                      streetViewControl: false,
+                      styles: styles
+                    }
+
+
+
+                    var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
+
+                    map.setTilt(0);
+                    var marker = new google.maps.Marker({
+                        position: pin,
+                        map: map,
+                        zIndex: 99
+                    });
+                  
+                }
+
+                initialize();
+
+                </script>
+            </section>
+
+
+            <!-- Content area ================== -->
+            <section class="content">
+
+                <div class="container">
+                    <div class="row">
+
+                        <aside class="span3" id="sidebar-left">
+                            <div class="widget text">
+                               
+                            </div><!-- /widget#1 -->
+
+                            <div class="widget social">
+                                <ul>
+                                    <li><a href="http://twitter.com/filipstefansson"><i class="icon-twitter"></i> Twitter</a></li>
+                                    <li><a href="#"><i class="icon-facebook"></i> Facebook</a></li>
+                                    <li><a href="#"><i class="icon-google-plus"></i> Google+</a></li>
+
+                                </ul>
+                            </div><!-- /widget#2 -->
+                        </aside>
+
+                        <!-- Content ================== -->
+                        <div class="span6 page">
+
+                            <h1 class="page-title">SIGN A PETITION</h1>
+                            
+
+                            <hr>
+
+                            <form id="contact_form" action="form.php" method="post">
+                                <label for="name">Name:</label>
+                                <input type="text" id="name" class="span6">
+
+                                <label for="email">Email:</label>
+                                <input type="email" id="email" class="span6">
+
+                                <label for="message">Message:</label>
+                                <textarea id="message" rows="8" class="span6"></textarea>
+
+
+                                <input type="submit" name="submit" class="form_submit_contact" id="submit" value="SEND MESSAGE" /> 
+                            </form>   
+
+                        </div><!-- /page -->
+                    </div>
+                </div><!-- /container -->
+            </section><!-- /header -->
+         </div><!-- /main -->
+
+
+        <!-- Footer area ================== -->
+        <footer id="footer">
+
+            <!-- Call to action ================= -->
+            <section class="call-to-action">
+                <div class="container">
+                    <div class="row">
+
+                        
+
+                    </div>
+                </div><!-- /container -->
+            </section><!-- /call-to-action -->
+
+            <!-- Content ================= -->
+            <section class="content">
+
+                <div class="container">
+                    <div class="row">
+                    </div>
+                </div><!-- /container -->
+            </section>
+
+
+            <!-- Footer bottom ================= -->
+            <section class="bottom">
+
+                <div class="container">
+                    <div class="row">
+
+                        <p class="span12 copyright">&copy; @MSIT:All Rights Reserved.</p>
+                    </div>
+                </div><!-- /container -->
+            </section>
+         </footer><!-- /footer -->
+
+
+        <!-- Load scripts ================= -->
+        <script src="../../ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.0.min.js"><\/script>')</script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+      </body>
+</html>
